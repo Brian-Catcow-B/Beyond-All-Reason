@@ -266,6 +266,7 @@ return {
 			[1] = {
 				burstcontrolwhenoutofarc = 1,
 				def = "HEAVYPLASMA",
+				maxangledif = 10,
 				onlytargetcategory = "SURFACE",
 			},
 			[2] = {
