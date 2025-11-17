@@ -60,7 +60,7 @@ local GL_ONE = GL.ONE
 local RectRound
 
 local function sndVolumeIncreaseHandler(_, _, _, _, isRepeat)
-	volume = Spring.GetConfigInt("snd_volmaster", 80)
+	volume = Spring.GetConfigInt("snd_volmaster", 30)
 	volume = volume + step
 	if volume < 0 then
 		volume = 0
@@ -78,7 +78,7 @@ local function sndVolumeIncreaseHandler(_, _, _, _, isRepeat)
 end
 
 local function sndVolumeDecreaseHandler(_, _, _, _, isRepeat)
-	volume = Spring.GetConfigInt("snd_volmaster", 80)
+	volume = Spring.GetConfigInt("snd_volmaster", 30)
 	volume = volume - step
 	if volume < 0 then
 		volume = 0
@@ -96,7 +96,7 @@ local function sndVolumeDecreaseHandler(_, _, _, _, isRepeat)
 end
 
 function widget:Initialize()
-	volume = Spring.GetConfigInt("snd_volmaster", 60)
+	volume = Spring.GetConfigInt("snd_volmaster", 30)
 
 	widgetHandler:AddAction("snd_volume_increase", sndVolumeIncreaseHandler, nil, 'pR')
 	widgetHandler:AddAction("snd_volume_decrease", sndVolumeDecreaseHandler, nil, 'pR')

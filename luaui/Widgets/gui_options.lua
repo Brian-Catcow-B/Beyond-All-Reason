@@ -951,7 +951,7 @@ function widget:Update(dt)
 			local prevIsOffscreenTime = isOffscreenTime
 			isOffscreenTime = os.clock()
 			if isOffscreen and not prevIsOffscreenTime then
-				prevOffscreenVolume = tonumber(Spring.GetConfigInt("snd_volmaster", 40) or 40)
+				prevOffscreenVolume = tonumber(Spring.GetConfigInt("snd_volmaster", 30))
 			end
 		end
 		if isOffscreenTime then
@@ -1071,7 +1071,7 @@ function widget:Update(dt)
 			windowList = gl.CreateList(DrawWindow)
 		end
 		if getOptionByID('sndvolmaster') then
-			options[getOptionByID('sndvolmaster')].value = tonumber(Spring.GetConfigInt("snd_volmaster", 40) or 40)    -- update value because other widgets can adjust this too
+			options[getOptionByID('sndvolmaster')].value = tonumber(Spring.GetConfigInt("snd_volmaster", 30))    -- update value because other widgets can adjust this too
 		end
 		if getOptionByID('sndvolmusic') then
 			if WG['music'] and WG['music'].GetMusicVolume then
@@ -2712,7 +2712,7 @@ function init()
 		  end,
 		},
 
-		{ id = "sndvolmaster", group = "sound", category = types.basic, name = Spring.I18N('ui.settings.option.volume') .. widgetOptionColor .. "  " .. Spring.I18N('ui.settings.option.sndvolmaster'), type = "slider", min = 0, max = 80, step = 2, value = tonumber(Spring.GetConfigInt("snd_volmaster", 1) or 80),
+		{ id = "sndvolmaster", group = "sound", category = types.basic, name = Spring.I18N('ui.settings.option.volume') .. widgetOptionColor .. "  " .. Spring.I18N('ui.settings.option.sndvolmaster'), type = "slider", min = 0, max = 80, step = 2, value = tonumber(Spring.GetConfigInt("snd_volmaster", 30)),
 		  onload = function(i)
 		  end,
 		  onchange = function(i, value)

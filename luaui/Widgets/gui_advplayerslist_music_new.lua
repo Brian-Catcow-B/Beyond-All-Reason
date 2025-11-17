@@ -476,7 +476,7 @@ if maxMusicVolume > 99 then
 	Spring.SetConfigInt("snd_volmusic", 99)
 	maxMusicVolume = 99
 end
-local volume = Spring.GetConfigInt("snd_volmaster", 80)
+local volume = Spring.GetConfigInt("snd_volmaster", 30)
 if volume > 80 then
 	Spring.SetConfigInt("snd_volmaster", 80)
 	volume = 80
@@ -1214,7 +1214,7 @@ function widget:Update(dt)
 		if math_isInRect(mx, my, left, bottom, right, top) then
 			mouseover = true
 		end
-		local curVolume = Spring.GetConfigInt("snd_volmaster", 80)
+		local curVolume = Spring.GetConfigInt("snd_volmaster", 30)
 		if volume ~= curVolume then
 			volume = curVolume
 			updateDrawing = true
@@ -1234,7 +1234,7 @@ function widget:DrawScreen()
 		mouseover = false
 	else
 		if math_isInRect(mx, my, left, bottom, right, top) then
-			local curVolume = Spring.GetConfigInt("snd_volmaster", 80)
+			local curVolume = Spring.GetConfigInt("snd_volmaster", 30)
 			if volume ~= curVolume then
 				volume = curVolume
 				updateDrawing = true
